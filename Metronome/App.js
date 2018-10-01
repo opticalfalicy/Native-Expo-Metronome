@@ -13,7 +13,7 @@ export default class App extends React.Component {
           <Main style={styles.main}/>
         </View>
         <View style={styles.bottomView}>
-          <Time style={styles.time}/>
+          {/* <Time style={styles.time}/> */}
           <Bpm />
           {/* <Text style={styles.maincolor}>Open up App.js to start working on your app!</Text> */}
         </View>

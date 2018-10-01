@@ -36,27 +36,69 @@ export default class Main extends React.Component {
         
 
     // }
+    counter = () => {
+        for (var i = 0; i < 5; i++) {
+            (function (i) {
+                setTimeout(function () {
+                    console.log("hello");
+                }, 3000*i);
+            })(i);
+        };  
+    }
 
     countingOn = () => {
+        const ubpm =  120;
+        const countArr = this.state.countArr;
+        let count = 0;
         this.setState({ counting: !this.state.counting });
-        console.log('toggle on', this.state.counting);
-        // const ubpm = 60 / 120;
-        // const countArr = this.state.countArr;
-        // while(this.state.counting == true){
-        //     for(let i = i; i <= countArr.length; i++){
-        //     setTimeout(function(){
-        //         console.log([i])},
-        //             ubpm
-        // )};
+        // while(this.state.countArr == true) {
+        for (let i = 1; i <= countArr.length; i++) {
+            (function (i) {
+                setTimeout(function () {
+                    console.log(i);
+                }, 3000*i);
+            })(i);
+        };
+    // }  
+}
+
+        
+        
+        
         // }
         
+    // countingOn = () => {
+    //     this.setState({ counting: !this.state.counting });
         
-    }
+    //     const ubpm = 60 / 120;
+    //     let count = 0;
+    //     const countArr = this.state.countArr;
+    //     for(let i = 0; i < countArr.length; i++){
+    //         setTimeout(function(){
+    //             ++count
+    //             console.log('toggle on', count);
+    //         },
+    //             500
+    //         )
+    //     }
+        
+    
+        // while(this.state.counting == true){
+        //         for(let i = i; i <= countArr.length; i++){
+        //             setTimeout(function(){
+        //                     return console.log([i])},
+        //                     ubpm
+        //             )};
+        //         //    return console.log('1');
+        //         }
+                
+                
+    // }
 
-    countingOff = () => {
-        this.setState({ counting: false });
-        console.log('countingOff');
-    }
+    // countingOff = () => {
+    //     this.setState({ counting: false });
+    //     console.log('countingOff');
+    // }
 
     // countingOff
 
@@ -65,22 +107,24 @@ export default class Main extends React.Component {
         let textToggle;
         let buttonToggle;
 
-        // if (this.state.counting == false){
-        //     textToggle = (
-        //         <Text style={styles.maincolor} onPress={this.countingOn}>Press To Start</Text>
-        //     );
+        if (this.state.counting == false){
+            textToggle = (
+                <Text style={styles.maincolor}>Touch To Start</Text>
+            );
             
-        // } 
-        // else {
-        //     <Text style={styles.maincolor} onPress={this.countingOff}>Off</Text>
-        // }
+        } 
+        if (this.state.counting == true) {
+            textToggle = (
+            <Text style={styles.maincolor}>Touch To Stop</Text>
+            );
+        }
         
 
         return(
             <TouchableOpacity onPress={this.countingOn} style={styles.container}>
 
-                {/* {textToggle} */}
-                <Text style={styles.maincolor} >Press To Start</Text>
+                {textToggle}
+                {/* <Text style={styles.maincolor} >Press To Start</Text> */}
             </TouchableOpacity>
         );
     }

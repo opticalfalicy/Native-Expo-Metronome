@@ -13,6 +13,7 @@
     "aws-amplify": "^1.1.4",
     "expo": "^30.0.1",
     "react": "16.3.1",
+    "react-devtools": "^3.4.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
     "react-native-play-sound": "^1.0.24",
     "react-native-sound": "^0.10.9",

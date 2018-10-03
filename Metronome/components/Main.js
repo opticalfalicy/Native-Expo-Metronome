@@ -41,17 +41,14 @@ export default class Main extends React.Component {
         let i = 0
 
         if(this.state.counting == true){
-            console.log('t');
-        counting = setInterval(function(){
-                i += 1
-                return i
+            counting = setInterval(function(){
+                console.log('x');
                 // console.log(i)
             }, ubpm);
-            console.log(i);
         }
+        
         else if(this.state.counting == false){
-            console.log('f');
-        clearInterval(counting)
+            clearInterval(counting)
         }
 
         console.log(i)
